@@ -1,0 +1,20 @@
+-- Create a clothing store database
+
+/** Clothing Store:
+Shirts (3) (15) (50)
+Pants (4) (20) (100)
+Shorts (5) (10) (100)
+Shoes (2) (12) (50)
+Hats (1) (10) (10)
+**/
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, size INTEGER);
+INSERT INTO clothing VALUES (1, "Shirts", 3, 15, 50);
+INSERT INTO clothing VALUES (2, "Pants", 4, 20, 100);
+INSERT INTO clothing VALUES (3, "Shorts", 5, 10, 100);
+INSERT INTO clothing VALUES (4, "Shoes", 2, 12, 50);
+INSERT INTO clothing VALUES (5, "Hats", 1, 10, 10);
+
+--display the database grouped by price.
+
+SELECT price, SUM (quantity) FROM clothing GROUP BY  price;
